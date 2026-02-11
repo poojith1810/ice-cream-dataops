@@ -1,4 +1,4 @@
-externalId: contextualize_ts_assets
+externalId: contextualize_ts_assets_task
 name: Contextualize TimeSeries and Assets
 destination:
   dataModel:
