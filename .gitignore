@@ -1,2 +1,4 @@
 .env
 .venv
+backup_0.env
+*.env
