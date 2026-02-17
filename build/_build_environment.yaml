@@ -6,23 +6,23 @@ selected:
 - modules/bootcamp/data_foundation/
 - modules/bootcamp/ice_cream_api/
 - modules/bootcamp/use_cases/oee/
-cdf_toolkit_version: 0.7.100
+cdf_toolkit_version: 0.6.53
 built_resources:
-  data_modeling:
+  data_models:
   - identifier:
       space: oee_ts_space
     source:
       path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/data_models/oee_timeseries.space.yaml
       hash: 4424ed7c
     kind: Space
-    destination: build/data_modeling/1.oee_timeseries.space.yaml
+    destination: build/data_models/1.oee_timeseries.space.yaml
   - identifier:
       space: icapi_dm_space
     source:
       path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/data_models/ice_cream_data_model.space.yaml
       hash: eca82cc8
     kind: Space
-    destination: build/data_modeling/2.ice_cream_data_model.space.yaml
+    destination: build/data_models/2.ice_cream_data_model.space.yaml
   functions:
   - identifier:
       externalId: oee_timeseries
@@ -196,10 +196,10 @@ built_resources:
     destination: build/extraction_pipelines/1.ep_icapi_datapoints.ExtractionPipeline.yaml
   transformations:
   - identifier:
-      externalId: contextualize_ts_assets_task
+      externalId: contextualize_ts_assets
     source:
       path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/transformations/contextualize_ts_assets.Transformation.yaml
-      hash: fc06da6e
+      hash: 96bbf654
     kind: Transformation
     destination: build/transformations/1.contextualize_ts_assets.Transformation.yaml
     extra_sources:
@@ -225,27 +225,21 @@ built_resources:
 read_modules:
 - dir: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee
   resource_directories:
-  - functions
-  - auth
-  - data_sets
   - data_models
-  module_id: null
-  package_id: null
+  - functions
+  - data_sets
+  - auth
 - dir: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/data_foundation
   resource_directories:
   - auth
-  module_id: null
-  package_id: null
 - dir: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api
   resource_directories:
+  - data_models
+  - extraction_pipelines
   - transformations
   - auth
-  - data_sets
-  - hosted_extractors
-  - raw
-  - workflows
-  - extraction_pipelines
   - functions
-  - data_models
-  module_id: null
-  package_id: null
+  - raw
+  - hosted_extractors
+  - workflows
+  - data_sets

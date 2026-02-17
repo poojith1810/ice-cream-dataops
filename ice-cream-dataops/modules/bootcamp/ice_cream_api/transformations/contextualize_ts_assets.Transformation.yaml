@@ -1,5 +1,5 @@
-externalId: contextualize_ts_assets_task
-name: Contextualize TimeSeries and Assets
+externalId: contextualize_ts_assets
+name: Contextualize Time Series and Assets
 destination:
   dataModel:
     space: cdf_cdm
